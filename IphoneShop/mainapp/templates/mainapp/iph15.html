@@ -1,0 +1,51 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% block title %}Iphone15{% endblock %}
+
+{% block content %}
+    <section class="container">
+        <nav class="group-1">
+            <span class="Timurka-Store">Timurka Store</span>
+            <div class="group-2">
+                <a href="{% url 'home' %}" class="home">home</a>
+                <a href="{% url 'about' %}" class="about">about</a>
+                <a href="{% url 'services' %}" class="services">services</a>
+                
+            </div>
+        </nav>
+        <div class="card1">
+            <img src="{% static 'mainapp/media/image1.png' %}" alt="" class="img1">
+            <h2 class="name1">{{ telephone1.name }}</h2>
+            <p class="desc desc1">Цвета:<br>{% for el in models %}{{ el.color }}<br>{% endfor %} <br>
+                Память:{% for el in modelsp %}{{ el.memory }}{% endfor %} Gb
+            </p>
+            <span class="price price1">Цена: {{ telephone1.price }}₽</span>
+            <form method="post" >
+                {%  csrf_token %}
+                <div class="inp-arr">
+                    {{ form.name }}
+                    {{ form.numb }}
+                    {{ form.mail }}
+                    {{ form.color }}
+                    {{ form.count }}
+                    {{ form.empl }}
+                    <button class="but" type="submit">Отправить заявку</button>
+                    <span class="err">{{ error }}</span>
+                </div>
+            </form>
+        </div>
+        
+        <footer>
+            <div class="Fbot">
+                <p class="contact">CONTACT US</p>
+                <br>
+                <br>
+                <ul class="spisok">
+                    <li>numb: 7(910)-734-04-40</li>
+                    <li>mail: ganger347008@yandex.ru</li>
+                    <li>addres: Russia, Bruansk, Lenin's st. 126A</li>
+                </ul>
+            </div>
+        </footer>
+    </section>
+{% endblock %}

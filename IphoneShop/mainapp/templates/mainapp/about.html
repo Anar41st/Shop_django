@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="Lorem">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="{% static 'mainapp/css/about2.css' %}">
+</head>
+<body>
+    <section class="container">
+        <nav class="group-1">
+            <span class="Timurka-Store">Timurka Store</span>
+            <div class="group-2">
+                <a href="{% url 'home' %}" class="home">home</a>
+                <a href="{% url 'about' %}" class="about">about</a>
+                <a href="{% url 'services' %}" class="services">services</a>
+                
+            </div>
+        </nav>
+
+        <p class="abt">Мы работаем с 2023 года | Быстрая доставка <br>Вы общаетесь с реальным человеком</Br></p>
+
+        <div class="goods"><p class="Gtext">Отзывы</p></div>
+        <form method="post" class="inpf">
+            {%  csrf_token %}
+            {{ form.fio }}
+            {{ form.feed }}
+            <button type="submit" class="but">Оставить отзыв</button>
+        </form>
+        <div class="line"></div>
+        {% for el in feedback %}
+        <div class="Feedback">
+            <span class="Fname">{{ el.fio }}</span>
+            <br> 
+            <br>
+            <p class="Ftext">{{ el.feed }}</p>
+            <br>
+        </div>
+        {% endfor %}
+        <footer>
+            <div class="Fbot">
+                <p class="contact">CONTATC US</p>
+                <br>
+                <br>
+                <ul class="spisok">
+                    <li>numb: 7(910)-734-04-40</li>
+                    <li>mail: ganger347008@yandex.ru</li>
+                    <li>addres: Russia, Bruansk, Lenin's st. 126A</li>
+                </ul>
+            </div>
+        </footer>
+    </section>
+   
+    
+</body>
+</html>

@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="Lorem">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+
+    <link rel="stylesheet" href="{% static 'mainapp/css/services.css' %}">
+</head>
+<body>
+    <section class="container">
+        <nav class="group-1">
+            <span class="Timurka-Store">Timurka Store</span>
+            <div class="group-2">
+                <a href="{% url 'home' %}" class="home">home</a>
+                <a href="{% url 'about' %}" class="about">about</a>
+                <a href="{% url 'services' %}" class="services">services</a>
+                
+            </div>
+        </nav>
+        
+        <div class="goods"><p class="Gtext">Услуги</p></div>
+       <a href="https://megabit32.ru/remont-apple/ustanovka-prilozhenij-udalennyh-iz-app-store" ><button class="Hbut">Сервис Iphone</button></a> <a href="https://apple-service32.ru/?yclid=11786562642795036671" ><button class="Abut">Ремонт телефонов</button></a>
+       <p class="text">Для урегулирования вопросов или же возврате средств,<br>обращайтесь по номеру телефона или почте</p>
+        
+        <footer>
+            <div class="Fbot">
+                <p class="contact">CONTATC US</p>
+                <br>
+                <br>
+                <ul class="spisok">
+                    <li>numb: 7(910)-734-04-40</li>
+                    <li>mail: ganger347008@yandex.ru</li>
+                    <li>addres: Russia, Bruansk, Lenin's st. 126A</li>
+                </ul>
+            </div>
+        </footer>
+    </section>
+   
+    
+</body>
+</html>

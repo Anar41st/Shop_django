@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="Lorem">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timurka-Store</title>
+    <link rel="stylesheet" href="{% static 'mainapp/css/mainpage2.css' %}">
+</head>
+<body>
+    <section class="container">
+        <nav class="group-1">
+            <span class="Timurka-Store">Timurka Store</span>
+            <div class="group-2">
+                <a href="{% url 'home' %}" class="home">home</a>
+                <a href="{% url 'about' %}" class="about">about</a>
+                <a href="{% url 'services' %}" class="services">services</a>
+                
+            </div>
+        </nav>
+        <div class="goods"><p class="Gtext">Товары в наличии</p></div>
+
+        <div class="card1">
+            <a href=""><img src="{% static 'mainapp/media/image1.png' %}" alt="" class="img1"></a>
+            <h2 class="name1">{{ telephone1.name }}</h2>
+            <p class="desc desc1">Цвета:<br>{% for el in models %}{{ el.color }}<br>{% endfor %} <br>
+                Память:{% for el in modelsp %}{{ el.memory }}{% endfor %} Gb
+            </p>
+            <span class="price price1">Цена: {{ telephone1.price }}₽</span>
+            <a href="{% url 'ip15' %}"><button class="but1">Оформить заказ</button></a>
+        </div>
+
+        <div class="card2">
+            <a href=""><img src="{% static 'mainapp/media/image2.png' %}" alt="" class="img2"></a>
+            <h2 class="name2">{{ telephone2.name }}</h2>
+            <p class="desc desc2">Цвета: <br>{% for el in models %}{{ el.color }} <br>{% endfor %} <br>
+                Память:{% for el in modelsp %}{{ el.memory }}{% endfor %} Gb
+            </p>
+            <span class="price price2">Цена: {{ telephone2.price }}₽</span>
+            <a href="{% url 'ip14' %}"><button class="but2">Оформить заказ</button></a>
+        </div>
+
+        <div class="card3">
+            <a href=""><img src="{% static 'mainapp/media/image3.png' %}" alt="" class="img3"></a>
+            <h2 class="name3">{{ telephone3.name }}</h2>
+            <p class="desc desc3">Цвета: <br>{% for el in models %}{{ el.color }} <br>{% endfor %} <br>
+                Память:{% for el in modelsp %}{{ el.memory }}{% endfor %} Gb
+            </p>
+            <span class="price price3">Цена: {{ telephone3.price }}₽</span>
+            <a href="{% url 'ip13' %}"><button class="but3">Оформить заказ</button></a>
+        </div>
+
+        <div class="card4">
+            <a href=""><img src="{% static 'mainapp/media/image4.png' %}" alt="" class="img4"></a>
+            <h2 class="name4">{{ telephone4.name }}</h2>
+            <p class="desc desc4">Цвета: <br>{% for el in models %}{{ el.color }} <br>{% endfor %} <br>
+                Память:{% for el in modelsp %}{{ el.memory }}{% endfor %} Gb
+            </p>
+            <span class="price price4">Цена: {{ telephone4.price }}₽</span>
+            <a href="{% url 'ip11' %}"><button class="but4">Оформить заказ</button></a>
+        </div>
+        
+        <footer>
+            <div class="Fbot">
+                <p class="contact">CONTATC US</p>
+                <br>
+                <br>
+                <ul class="spisok">
+                    <li>numb: 7(910)-734-04-40</li>
+                    <li>mail: ganger347008@yandex.ru</li>
+                    <li>addres: Russia, Bruansk, Lenin's st. 126A</li>
+                </ul>
+            </div>
+        </footer>
+    </section>
+   
+    
+</body>
+</html>

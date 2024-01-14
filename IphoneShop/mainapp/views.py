@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import Http404
 from .models import Telephone, Models, Clients, Employees, Feedback
-from .forms import ClientForm, FeedbackForm
+from .forms import ClientForm15, ClientForm14, ClientForm13, ClientForm11, FeedbackForm
 
 telephone1 = Telephone.objects.all()[0]
 telephone2 = Telephone.objects.all()[1]
@@ -29,46 +29,47 @@ def order(request):
 def iphone15(request):
     error=''
     if request.method=='POST':
-        form = ClientForm(request.POST)
+        form = ClientForm15(request.POST)
         if form.is_valid():
             form.save()
             return redirect('order')
         else:
             error='Форма неверная'
-    form = ClientForm()
+    form = ClientForm15()
     return render(request, 'mainapp/iph15.html', {'telephone1': telephone1, 'models': models, 'modelsp': modelsp, 'form': form, 'error': error})
 def iphone14(request):
     error = ''
     if request.method == 'POST':
-        form = ClientForm(request.POST)
+        form = ClientForm14(request.POST)
+
         if form.is_valid():
             form.save()
             return redirect('order')
         else:
             error = 'Форма неверная'
-    form = ClientForm()
+    form = ClientForm14()
     return render(request, 'mainapp/iph14.html', {'telephone2': telephone2, 'models': models, 'modelsp': modelsp, 'form': form, 'error': error})
 def iphone13(request):
     error = ''
     if request.method == 'POST':
-        form = ClientForm(request.POST)
+        form = ClientForm13(request.POST)
         if form.is_valid():
             form.save()
             return redirect('order')
         else:
             error = 'Форма неверная'
-    form = ClientForm()
+    form = ClientForm13()
     return render(request, 'mainapp/iph13.html', {'telephone3': telephone3, 'models': models, 'modelsp': modelsp, 'form': form, 'error': error})
 def iphone11(request):
     error = ''
     if request.method == 'POST':
-        form = ClientForm(request.POST)
+        form = ClientForm11(request.POST)
         if form.is_valid():
             form.save()
             return redirect('order')
         else:
             error = 'Форма неверная'
-    form = ClientForm()
+    form = ClientForm11()
     return render(request, 'mainapp/iph11.html', {'telephone4': telephone4, 'models': models, 'modelsp': modelsp, 'form': form, 'error': error})
 def error(request):
     raise Http404()

@@ -42,6 +42,7 @@ class Clients(models.Model):
     mail = models.CharField('Почта', max_length=50)
     color = models.CharField('Цвет', max_length=30)
     count = models.IntegerField('Количество')
+    telephonemod = models.CharField('Модель', max_length=20)
     empl = models.CharField('ФИО сотрудника', max_length=30, blank=True, null=True)
     memory = models.IntegerField('Память', blank=True, null=True)
 
